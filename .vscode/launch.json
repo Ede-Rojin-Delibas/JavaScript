@@ -1,0 +1,23 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Debug 03 Developer Skills (Chrome)",
+      "type": "chrome",
+      "request": "launch",
+      "file": "${workspaceFolder}/03-Developer-Skills/starter/index.html",
+      "webRoot": "${workspaceFolder}/03-Developer-Skills/starter",
+      "sourceMaps": true,
+      "skipFiles": ["<node_internals>/**"]
+    },
+    {
+      "name": "Debug 03 Developer Skills (Edge)",
+      "type": "msedge",
+      "request": "launch",
+      "file": "${workspaceFolder}/03-Developer-Skills/starter/index.html",
+      "webRoot": "${workspaceFolder}/03-Developer-Skills/starter",
+      "sourceMaps": true,
+      "skipFiles": ["<node_internals>/**"]
+    }
+  ]
+}
