@@ -150,7 +150,7 @@ Let's say you are building a time tracking application for freelancers. At some 
 you need a function that receives daily work hours for a certain week and returns:
 
 //B-BREAK IT UP INTO SUB-PROBLEMS
-1.Total hours worked(sum func for total hours)✅
+1.Total hours worked(sum)✅
 2.Average daily hours (divide by the day that worked in each week if its full)✅
 3.The day with the most hours worked(max)
 maximum değeri bul, onun indexini bul ve 
@@ -163,22 +163,37 @@ TEST DATA: [7.5, 8, 6.5, 0, 8.5, 4, 0]
 //user input for daily work hours for a certain week
 //return daily work hours
 
-const timeTracking = function (dailyWorkHours) {
-  //first sub-solution
+const analyzeWorkWeek = function (dailyWorkHours) {
   let totalHours = 0;
-  let averageHoursPerWeek;
+  let daysWorked = 0;
+  let maxHours = dailyWorkHours[0];
+  let dayWithMostHours = 0;
+
   for (let i = 0; i < dailyWorkHours.length; i++) {
-    totalHours += dailyWorkHours[i];
-    return `Total hours worked ${totalHours}`;
+    const currentHours = dailyWorkHours[i];
+
+    totalHours += currentHours;
+
+    if (currentHours > 0) daysWorked++;
+
+    if (currentHours > maxHours) {
+      maxHours = currentHours;
+      dayWithMostHours = i;
+    }
   }
-  averageHoursPerWeek = totalHours / dailyWorkHours.length;
-  let max = dailyWorkHours[0];
-  for (let i = 0; i < dailyWorkHours.length; i++) {
-    const currTemp = dailyWorkHours[i];
-    if (max < currTemp) max = currTemp;
-    return `The day with the most hours worked ${i}`;
-  }
+
+  const averageDailyHours =
+    daysWorked === 0 ? 0 : Number((totalHours / daysWorked).toFixed(1));
+  const isFullTime = totalHours >= 35;
+
+  return {
+    totalHours,
+    averageDailyHours,
+    dayWithMostHours,
+    daysWorked,
+    isFullTime,
+  };
 };
 
-const results = timeTracking([7.5, 8, 6.5, 0, 8.5, 4, 0]);
+const results = analyzeWorkWeek([7.5, 8, 6.5, 0, 8.5, 4, 0]);
 console.log(results);
