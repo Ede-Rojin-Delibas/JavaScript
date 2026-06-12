@@ -64,10 +64,10 @@ const lenArray = populations.length === 4 ? true : false;
 const percentages = [
   percentageOfWorld1(populations[0]),
   percentageOfWorld1(populations[1]),
+  percentageOfWorld1(populations[2]),
   percentageOfWorld1(populations[3]),
-  percentageOfWorld1(populations[4]),
 ];
-// console.log(percentages);
+console.log(percentages);
 
 /* Challenge 4: Array Operations/Methods
 1- Create an array containing all the neighbouring countries of a country of your choice. Choose a country which has at least 2 
@@ -143,7 +143,8 @@ property. */
 // myCountry.describe();
 myCountry.checkIsland();
 // console.log(myCountry.checkIsland());
-/*Looping Arrays, Breaking and Continuing
+/* Challange 8:
+Looping Arrays, Breaking and Continuing
 1-Let's bring back the populations array from a previous assignment.
 
 2-Use a for loop to compute an array called percentages2 containing the percentages of the 
@@ -151,4 +152,52 @@ world population for the 4 population values. Use the function percentageWOrld1 
 
 3-Confirm that percentages2 contains exactly the same values as the percentages array that we created manually in the previous 
 assignment, and reflect on how much better this solution is. 
+ 
+a)understanding the problem
+-percentage2 array is going to have 
+
+*/
+const percentages2 = [];
+for (let i = 0; i < populations.length; i++) {
+  percentages2.push(percentageOfWorld1(populations[i]));
+  if (percentages2[i] === percentages[i]) {
+    console.log('arrays are the same');
+  } else {
+    console.log('they different');
+  }
+}
+
+/* challenge 9: Looping Backwards and Loops in Loops
+Store this array of arrays into a variable called listOfNeighbours:
+
+[['Canada', 'Mexico'], ['Spain'], ['Norway', 'Sweden', 'Russia']];
+Log only the neighbouring countries to the console, one by one, not the entire arrays. Log a string like 'Neighbour: Canada' for each country.
+
+You will need a loop inside a loop for this. This is actually a bit tricky, so don't worry if it's too difficult for you! But you can still try to figure this out anyway 😉
+
+a) understand the problem
+print the neighbouring countries like this: Neighbour: Canada for Mexico
+
+b) sub-problems
+- you need to define a for loop for traveling on array(listofNeighbours)
+- 
  */
+const listOfNeighbours = [
+  ['Canada', 'Mexico'], //i=0
+  ['Spain'], //i=1
+  ['Norway', 'Sweden', 'Russia'], //i=2
+];
+for (let i = 0; i < listOfNeighbours.length; i++) {
+  for (let j = 0; j < i; j++) {
+    if (i === 0) {
+      console.log(`Neighbour:${listOfNeighbours[0][1]}`);
+    }
+  }
+}
+
+/* 
+challenge 10: The while Loop
+1-Recreate the challenge from the lecture Looping Arrays, Breaking and Continuing, but this time using a while loop (call the array percentages3).
+
+2-Reflect on what solution you like better for this task: the for loop or the while loop? 
+*/
