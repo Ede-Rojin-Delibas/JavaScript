@@ -180,7 +180,8 @@ print the neighbouring countries like this: Neighbour: Canada for Mexico
 
 b) sub-problems
 - you need to define a for loop for traveling on array(listofNeighbours)
-- 
+-dış loop mantığı: hangi küçük arraydeyim
+- iç loop mantığı: 
  */
 const listOfNeighbours = [
   ['Canada', 'Mexico'], //i=0
@@ -189,9 +190,8 @@ const listOfNeighbours = [
 ];
 for (let i = 0; i < listOfNeighbours.length; i++) {
   for (let j = 0; j < i; j++) {
-    if (i === 0) {
-      console.log(`Neighbour:${listOfNeighbours[0][1]}`);
-    }
+    //j içteki arrayin uzunluğuna göre dönmeli, i değerine göre değil
+    console.log(`Neighbour:${listOfNeighbours[i][j]}`);
   }
 }
 
