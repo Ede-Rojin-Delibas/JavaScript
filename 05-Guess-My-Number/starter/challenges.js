@@ -157,7 +157,7 @@ a)understanding the problem
 -percentage2 array is going to have 
 
 */
-const percentages2 = [];
+/* const percentages2 = [];
 for (let i = 0; i < populations.length; i++) {
   percentages2.push(percentageOfWorld1(populations[i]));
   if (percentages2[i] === percentages[i]) {
@@ -165,7 +165,7 @@ for (let i = 0; i < populations.length; i++) {
   } else {
     console.log('they different');
   }
-}
+} */
 
 /* challenge 9: Looping Backwards and Loops in Loops
 Store this array of arrays into a variable called listOfNeighbours:
@@ -189,9 +189,9 @@ const listOfNeighbours = [
   ['Norway', 'Sweden', 'Russia'], //i=2
 ];
 for (let i = 0; i < listOfNeighbours.length; i++) {
-  for (let j = 0; j < i; j++) {
+  for (let j = 0; j < listOfNeighbours[i].length; j++) {
     //j içteki arrayin uzunluğuna göre dönmeli, i değerine göre değil
-    console.log(`Neighbour:${listOfNeighbours[i][j]}`);
+    // console.log(`Neighbour:${listOfNeighbours[i][j]}`);
   }
 }
 
@@ -201,3 +201,33 @@ challenge 10: The while Loop
 
 2-Reflect on what solution you like better for this task: the for loop or the while loop? 
 */
+
+let i = 0;
+percentages3 = [];
+while (i < populations.length) {
+  percentages3.push(percentageOfWorld3(populations[i]));
+  i++;
+}
+
+// console.log(percentages3);
+
+//17.06.2026 review and coding
+//object içinde yazdığın fonksiyona method denir.
+//boş array loop un dışında oluşturulmalıdır yoksa her turda sıfırlanır.
+//return yoksa sonuç undefined olur
+
+//first ch after review
+const describeCity = function (city, country) {
+  // console.log(`${city} is in ${country}`);
+};
+
+describeCity('Ankara', 'Türkiye');
+describeCity('Madrid', 'Spain');
+describeCity('Tokyo', 'Japan');
+
+//ch2: percentage function
+const europePopulation = 750;
+const percentageOfEurope = function (population) {
+  return (Number(population) / europePopulation) * 100;
+};
+// console.log(percentageOfEurope(85));
