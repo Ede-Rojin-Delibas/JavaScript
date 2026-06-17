@@ -67,7 +67,7 @@ const percentages = [
   percentageOfWorld1(populations[2]),
   percentageOfWorld1(populations[3]),
 ];
-console.log(percentages);
+// console.log(percentages);
 
 /* Challenge 4: Array Operations/Methods
 1- Create an array containing all the neighbouring countries of a country of your choice. Choose a country which has at least 2 
@@ -231,3 +231,29 @@ const percentageOfEurope = function (population) {
   return (Number(population) / europePopulation) * 100;
 };
 // console.log(percentageOfEurope(85));
+
+//ch3: array + function
+const cityPopulations = [15, 9, 3, 20];
+
+const europePercentages = [];
+
+europePercentages.push(percentageOfEurope(cityPopulations[0]));
+europePercentages.push(percentageOfEurope(cityPopulations[1]));
+europePercentages.push(percentageOfEurope(cityPopulations[2]));
+europePercentages.push(percentageOfEurope(cityPopulations[3]));
+// console.log(europePercentages);
+
+//döngüyle(for)
+for (let i = 0; i < cityPopulations.length; i++) {
+  europePercentages.push(percentageOfEurope(cityPopulations[i]));
+}
+// console.log(europePercentages);
+
+//ch4:object practice
+const myCity = {
+  city: 'Tokyo',
+  country: 'Japan',
+  population: 120,
+  isCapital: true,
+  describe: function () {},
+};
