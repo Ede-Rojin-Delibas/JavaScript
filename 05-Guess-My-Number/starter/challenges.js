@@ -255,5 +255,25 @@ const myCity = {
   country: 'Japan',
   population: 120,
   isCapital: true,
-  describe: function () {},
+  describe: function () {
+    console.log(
+      `${this.city} is in ${this.country} and has ${this.population} million people`,
+    );
+  },
+  checkBigCity: function () {
+    const isBigCity;
+    if (myCity.population >= 10) {
+      isBigCity = true;
+    } else {
+      isBigCity = false;
+    }
+  },
 };
+// myCity.describe();
+
+//bir fonksiyonda return yoksa sonuç 'undefined' olur
+//Nested loop’ta iç loop çoğu zaman i`ye göre değil, içteki array’in `.length değerine göre dönmelidir.
+
+//ch6:object methods and new property (checkBigCity)
+myCity.checkBigCity();
+console.log(myCountry.isBigCity);
