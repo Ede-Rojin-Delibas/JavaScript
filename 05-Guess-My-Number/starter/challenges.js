@@ -262,10 +262,10 @@ const myCity = {
   },
   checkBigCity: function () {
     const isBigCity;
-    if (myCity.population >= 10) {
-      isBigCity = true;
+    if (this.population >= 10) {
+      this.isBigCity = true;
     } else {
-      isBigCity = false;
+      this.isBigCity = false;
     }
   },
 };
@@ -276,4 +276,4 @@ const myCity = {
 
 //ch6:object methods and new property (checkBigCity)
 myCity.checkBigCity();
-console.log(myCountry.isBigCity);
+// console.log(myCountry.isBigCity);
