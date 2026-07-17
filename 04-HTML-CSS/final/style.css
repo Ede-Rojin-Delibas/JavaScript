@@ -5,10 +5,19 @@
 }
 
 body {
-  background-color: rgb(255, 247, 201);
-  font-family: Arial;
+  background-color: #f3f4f6;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #222;
   font-size: 20px;
-  padding: 50px;
+  padding: 40px;
+}
+
+form {
+  background-color: white;
+  width: 400px;
+  padding: 24px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
 }
 
 h1 {
@@ -22,7 +31,7 @@ h2 {
 }
 
 p {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .first {
@@ -37,9 +46,20 @@ p {
   margin-top: 30px;
 }
 
-input,
+input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 16px;
+  border: 1px solid #aaa;
+  font-size: 16px;
+}
+
 button {
-  padding: 10px;
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 12px 24px;
   font-size: 16px;
 }
 
@@ -53,4 +73,13 @@ a {
 
 #your-name h2 {
   color: olivedrab;
+}
+button:hover {
+  background-color: #1d43d8;
+}
+
+.my-form {
+  background-color: rgb(159, 127, 235);
+  padding: 30px;
+  width: 400px;
 }
